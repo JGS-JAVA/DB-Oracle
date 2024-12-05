@@ -41,6 +41,15 @@ where 절에는 조건식 (true/false) 만 작성
 컬럼명 NOT IN (값1,값2, ...) = 컬럼값이 불일치시 TRUE
 
 
+LIKE
+비교값이 특정패턴 만족시 참 조회하는 연산자
+WHERE 컬럼명 LIKE '패턴';
+'%' (포함하다)
+- %A : A로 끝나는 문자열 찾기
+- A% : A로 시작하는 문자열 찾기
+- %A% : A 포함하는 문자열 찾기
+
+
 */
 --department표의 모든내용 조회하기
 SELECT * FROM department;
@@ -242,7 +251,50 @@ ex ) 이름이 비어있지 않은 사원 조회
     where emp_name is not null;
 
 
+----------------------------------------------------------------
+/*
+ORDER BY 절
+SELECT 문 조회결과(RESULT SET) 정렬시 사용
+SELECT 문 제일 마지막에 해석
 
+3. SELECT 컬럼명 AS 별칭, 컬럼명, 컬럼명, ...
+1. FROM 테이블명
+2. WHERE 조건식
+4. ORDER BY 컬럼명 | 별칭 | 컬럼순서 [오름/내림차순]
+
+오름차순 : ASC(ASCENDING)
+내림차순 : DESC(DESCENDING)
+
+ORDER BY 컬럼명; (기본 오름차순)
+
+NULLS FIRST / NULLS LAST
+NULLS FIRST
+NULL값 맨위에 배치
+
+NULLS LAST (기본설정값)
+NULL값 맨아래에 배치 
+
+ORDER BY에서 맨뒤에 작성
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 
