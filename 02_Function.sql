@@ -36,6 +36,7 @@ WHERE UPPER(컬럼명) = UPPER('%조회할데이터%');
 SELECT UPPER(컬럼명) AS 대문자컬럼명
 FROM 표이름;
 
+COUNT(컬럼명) = NULL 값 제외하고 행갯수 반환
 COUNT(DISTINCT 컬럼명) : 컬럼에서 중복값 제외한 행갯수 반환
 COUNT(*) : 조회된 행갯수 반환
 
