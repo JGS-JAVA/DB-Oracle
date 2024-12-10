@@ -136,6 +136,56 @@ VALUES (40,20,'그린티 프라페','녹차와 우유의 달콤한 음료',6000)
 COMMIT;
 SELECT * FROM EATS_MENU EM;
 
+-------------------------------------------------------------------
+
+SELECT * FROM DEPARTMENT D
+WHERE DEPT_ID = 'D9';
+
+-- DEPARTMENT 표에서 DEPT_ID 가 D9 인 행의 DEPT_ID 를 전략기획팀으로 수정
+
+UPDATE DEPARTMENT
+SET DEPT_TITLE = '총무부'
+WHERE DEPT_ID = 'D9';
+COMMIT;
+ROLLBACK;
+
+SELECT * FROM EATS;
+
+UPDATE EATS 
+SET CONTACT_NUMBER = '010-0000-1111'
+WHERE CAFE_ID = '12';
+
+UPDATE EATS_MENU
+SET PRICE = '6000'
+WHERE MENU_NAME = '화이트 모카';
+
+SELECT * FROM EATS_MENU;
+
+UPDATE EATS_MENU
+SET DESCRIPTION = '홍차와 우유가 어우러진 진한 맛의 밀크티'
+WHERE MENU_NAME = '밀크티';
+
+UPDATE EATS_MENU
+SET PRICE = PRICE * 1.1
+WHERE PRICE <= 5500;
+
+SELECT * FROM EATS;
+
+--주소변경, 전화번호 삭제
+UPDATE EATS
+SET LOCATION = '경기도 안양시', CONTACT_NUMBER = NULL
+WHERE CAFE_NAME = '그린빈 카페';
+
+
+
+
+
+
+
+
+
+
+
 
 
 
