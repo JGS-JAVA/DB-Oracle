@@ -32,7 +32,21 @@ ACID
 격리성 = 충돌방지 위해 순차적 처리
 지속성 = 트랜잭션 결과 저장
 
+SELECT * FROM khtuser.user;
+-- user phone 앞에 작성된 kor) 제거
+set sql_safe_updates = 0; -- 안전모드 종료
 
+start transaction;           -- savepoint 를 사용하기 위해서는 start transaction 시작 수동 제어
+savepoint sp1;              -- 임시로 되돌릴 위치이름 sp1 설정
+use khtuser;              -- khtuser db로 접속
+update user set phone = substring_index(phone, ')', 1); -- 수정할 update 작성
+select * from user;                                        -- 제대로 수정했는지 확인
+
+rollback to sp1;           -- 원하는대로 결과 수정 X sp1 임시저장한 위치로 되돌리기 
+update user set phone = substring_index(phone, ')', -1); -- 수정
+select * from user;            -- 올바르게 수정됐는지 확인
+
+commit;                        -- 수정 결과 저장
 
 
 
