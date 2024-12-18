@@ -31,10 +31,9 @@ CREATE OR REPLACE TRIGGER trg_user
 BEFORE INSERT ON student
 FOR EACH ROW
 BEGIN
-    -- 시퀀스를 사용해서 student 테이블 내에 studentid 번호를 자동으로 생성
-    :NEW.studentid = seq_user.NEXTVAL;
+    :NEW.studentid := seq_user.NEXTVAL;
 END;
-/
+
 
 INSERT INTO student (STUDENTNAME, STUDENTAGE) VALUES ('홍길동',11);
 INSERT INTO student (STUDENTNAME, STUDENTAGE) VALUES ('강철수',12);
@@ -46,8 +45,9 @@ SELECT TRIGGER_NAME, STATUS
 FROM USER_TRIGGERS
 WHERE TRIGGER_NAME = 'TRG_USER';
 
-SHOW ERRORS TRIGGER TRG_USER;
 
+-- show errors trigger trg_user; 명령 프롬포트 창예써 문쪠를 찾을때 사용
+ 
 SELECT SEQUENCE_name
 FROM user_sequences
 WHERE SWQUENCE_name
@@ -58,6 +58,13 @@ FOR EACH ROW
 BEGIN
     :NEW.studentid = seq_user.NEXTVAL;
 END;
+
+
+
+
+
+
+
 INSERT INTO student (STUDENTID, STUDENTNAME, STUDENTAGE) 
 VALUES (seq_user.NEXTVAL,'안정미',15);
 
@@ -70,8 +77,16 @@ FOR EACH ROW
 BEGIN
     :NEW.studentid = seq_user.NEXTVAL;
 END;
-/
 
+/*
+ * 오라클 구문때 cmd 나 sqldeveloper 환경에서 사용시 작성필수
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * */
 
 
 
