@@ -34,7 +34,7 @@ CREATE TABLE 표이름(
 DEFAULT = 기본값 지정 (필수 아님)
 INSERT UPDATE 시 값 입력안하면 기본값 들어감
 
-
+CREATE 생성 제약조건은 15_제약조건.SQL 참조
 
 
 

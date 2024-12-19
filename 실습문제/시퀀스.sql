@@ -45,25 +45,12 @@ SELECT TRIGGER_NAME, STATUS
 FROM USER_TRIGGERS
 WHERE TRIGGER_NAME = 'TRG_USER';
 
-
+select * FROM STUDENT S; 
 -- show errors trigger trg_user; 명령 프롬포트 창예써 문쪠를 찾을때 사용
  
 SELECT SEQUENCE_name
 FROM user_sequences
 WHERE SWQUENCE_name
-
-CREATE OR REPLACE TRIGGER trg_user
-BEFORE INSERT ON student
-FOR EACH ROW
-BEGIN
-    :NEW.studentid = seq_user.NEXTVAL;
-END;
-
-
-
-
-
-
 
 INSERT INTO student (STUDENTID, STUDENTNAME, STUDENTAGE) 
 VALUES (seq_user.NEXTVAL,'안정미',15);

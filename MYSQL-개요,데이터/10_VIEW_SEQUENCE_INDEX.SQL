@@ -58,7 +58,47 @@ MYSQL 은 시퀀스 대신 AUTO_INCREMENT 사용
 
 -- 뷰 표는 JOIN 해서 만들면 INSERT UPDATE DELETE 안됨
 -- 단일 표로 VIEW 설정시 INSERT DELETE 임시로 가능하나 주로 SELECT 결과 임시저장용도
+/*
+INDEX (= PRIMARY KEY)
+SQL 구문중 SELECT 처리속도 향상하려고 컬럼에 대해 생성
+내부구조 B*트리 형식
+2진트리 형식으로 자동정렬및 검색속도 증가
+조회시 표 전체가 아닌 지정된 컬럼만 조회해서 시스템 부하 낮다
+INSERT UPDATE DELETE 작업시 이진트리구조에 변형
+DML 작업 빈번하면 시스템 부하 늘어 성능 저하
+객체라서 메모리공간 필요
+생성시간 필요
 
+
+CREATE [UNIQUE] INDEX 인덱스명
+ON 표이름(컬럼명[,컬럼명|함수명]);
+
+DROP INDEX 인덱스명
+INDEX 자동생성경우
+PK 또는 UNIQUE 제약 있는 컬럼에 UNIQUE INDEX 자동생성
+
+WHERE 절에 INDEX 지정된 컬럼언급으로 사용
+SELECT * FROM EMPLOYEE; -- 인덱스 사용 안함
+SELECT * FROM EMPLOYEE WHERE EMP_ID != 0; -- 인덱스 사용
+
+
+B*트리 = 하나의 노드에 많은 정보 가진다
+검색속도 향상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 
