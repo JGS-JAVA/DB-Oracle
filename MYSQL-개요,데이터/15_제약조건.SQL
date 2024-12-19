@@ -58,11 +58,12 @@ DEFAULT VALUE 설정해서 NULL 값 방지
 CREATE TABLE 표이름(
 테이블_ID INT AUTO_INCREMENT PRIMARY KEY,
 유저명 VARCHAR(50) NOT NULL,
-가입일자 DATE NOT NULL DEFAULT CURRENT_DATE
+가입일자 DATETIME NOT NULL DEFAULT CURRENT_DATE
 )
 유저명 가입일자 모두 빈값불가 -> 가입제한 
 (유저명은 유저가 기록, 가입일자는 자동기록됨)
-
+-- DATE 자료형은 연월일 만 가능, 시간 불가. CURRENT_TIMESTAMP 불가
+-- DATETIME 은 연월일시 가능
 
 
 
@@ -146,7 +147,8 @@ CREATE TABLE 메뉴들 (
 
 
 */
-
+-- DATE 자료형은 연월일 만 가능, 시간 불가. CURRENT_TIMESTAMP 불가
+-- DATETIME 은 연월일시 가능
 
 
 
