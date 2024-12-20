@@ -35,5 +35,25 @@ WHERE 컬럼명 LIKE '패턴';
 - A% : A로 시작하는 문자열 찾기
 - %A% : A 포함하는 문자열 찾기
 
+'_'(글자수 띄어쓰기 포함)
+'A_'(A로 시작하는 2글자짜리 단어)
+'_A'(A로 끝나는 2글자짜리 단어)
+
+-- like 글자수 지정 조회 가능 '_'
+    
+    select name from product where name like '한________';
+    
+    select name from product where name like '한_________';
+
+SELECT USERNAME, EMAIL
+FROM USER
+WHERE EMAIL LIKE '_________@%';
+
+ESCAPE'#' = 특수문자# 을 단순 문자로 인식
+
+SELECT EMAIL
+FROM USER
+WHERE EMAIL LIKE '_________@%';
+
 
 */
